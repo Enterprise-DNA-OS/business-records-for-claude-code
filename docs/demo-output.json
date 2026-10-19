@@ -12,7 +12,7 @@
       "title": "Retention decisions",
       "ask": "Which records need a retention decision, and which must stay?",
       "command": "node scripts/records.mjs retention-due",
-      "output": "  name                          owner       retention end  active holds  decision                               \n  ----------------------------  ----------  -------------  ------------  ---------------------------------------\n  Delivery docket archive       Unassigned  null           0             Retention date missing                 \n  Former supplier contact list  Aroha       2026-08-20     0             Eligible for human review, not deletion\n  Supplier invoice disputed     Mere        2025-12-23     1             Held: do not dispose"
+      "output": "  name                          owner       retention end  active holds  decision                               \n  ----------------------------  ----------  -------------  ------------  ---------------------------------------\n  Delivery docket archive       Unassigned  Not set        0             Retention date missing                 \n  Former supplier contact list  Aroha       2026-08-20     0             Eligible for human review, not deletion\n  Supplier invoice disputed     Mere        2025-12-23     1             Held: do not dispose"
     },
     {
       "title": "The weekly work queue",

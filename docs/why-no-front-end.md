@@ -1,24 +1,9 @@
-# Why there is no front end
+# The records desk without a front end
 
-DocuWare is a database with a subscription. The tables underneath it are ordinary: a few entities, a few relationships, a handful of workflows you repeat every week. What you pay for is the layer on top that lets people who do not write SQL get at those tables. Screens, filters, dashboards, forms.
+The weekly work is a review of records: what is missing, what must stay, who owns the next action and what the evidence says. The database stores those facts. The original files live in a private content-addressed archive. An agent runs the same CLI that an operator can run directly.
 
-That layer used to be the whole product, because talking to a database was hard. It is not hard any more. Open this folder in Claude Code, describe what you want, and it writes the query, runs it, and explains the answer. Ask a question the dashboard never had a chart for and you still get an answer.
+Read-only HTML shows the queues and paperwork. It is a report, not an application. No server, form, signing action or deletion button is shipped.
 
-## What you gain
+A screen gives a team document previews, drag-and-drop capture, mobile scanning, visual annotations and role-based tasks. This base does not provide those things. It also does not offer OCR, full-text document search, electronic signatures, verified identities, multi-user approvals or tamper-proof storage. Enterprise DNA can build a suitable front end and connections into the installed system.
 
-- **Better answers.** A dashboard shows what the vendor decided to chart. Here you ask your own question, in your own words, and get it answered against your own data.
-- **No seats.** Everyone who needs to look can look. The bill does not grow with headcount.
-- **Your data in your Postgres.** Plain tables. Back them up, query them from anything, leave any time. There is no export step because there is nothing to leave.
-- **A process that matches you.** When your way of working changes, you add a command. You do not wait for a feature request to clear.
-
-## What you give up
-
-- **A visual board.** Stages are a table you ask about, not cards you drag.
-- **A phone app.** It runs where Claude Code runs.
-- **A vendor help desk.** This is open source. Enterprise DNA supports the installed version for businesses that want someone to call.
-
-## Who this fits
-
-Small teams who already use Claude Code, or who would rather learn to ask than learn another interface. If your team needs a screen to look at all day, keep DocuWare. If you need the answers more than the screens, this is cheaper, faster and yours.
-
-Installed and run for you: https://enterprisedna.co/omni/instead-of/docuware
+The base searches index fields only. It works for a trusted records operator with local originals and evidence references. Businesses needing a full capture platform or shared approval workflow must scope those requirements before replacing their current system.

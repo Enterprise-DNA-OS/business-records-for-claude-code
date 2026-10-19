@@ -1,0 +1,19 @@
+{
+  "fields": {
+    "cabinet": "Cabinet",
+    "source_id": "Document ID",
+    "name": "Title",
+    "document_date": "Document Date",
+    "record_class": "Document Type",
+    "owner": "Owner",
+    "retain_until": "Retention Date",
+    "review_due": "Review Date",
+    "personal": "Personal",
+    "period_end": "Tax Period End",
+    "external_ref": "Reference"
+  },
+  "classes": {
+    "General": "business-general",
+    "Tax": "nz-tax"
+  }
+}

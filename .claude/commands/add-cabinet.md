@@ -1,0 +1,13 @@
+---
+name: add-cabinet
+description: "Register a source cabinet"
+---
+# Register a source cabinet
+
+Report the evidence returned by the command. Do not invent records or infer a completed review.
+
+```bash
+node scripts/records.mjs add-cabinet "<name>" --source="<exact DocuWare cabinet>" --actor="<operator>"
+```
+
+Use --json when composing a report. Keep originals and outputs private. Nothing sends, publishes or deletes from this workflow.

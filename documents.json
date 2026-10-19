@@ -1,11 +1,47 @@
 [
   {
-    "name": "example",
-    "title": "TODO(author): the first document this industry must produce",
-    "for_each": "select gen_random_uuid() as id, 'Example' as name",
+    "name": "record-handover",
+    "title": "Record handover: internal draft",
+    "for_each": "select id,name from records order by name",
     "file": "name",
     "sections": [
-      { "title": "Details", "sql": "select 'replace me' as item, $1::text as record_id" }
+      {
+        "title": "Record and retention",
+        "sql": "select name,cabinet,owner,document_date,record_class,retention_end,status from record_register where id=$1"
+      },
+      {
+        "title": "Originals",
+        "sql": "select version,original_name,sha256,bytes,actor,evidence from versions where record_id=$1 order by version"
+      },
+      {
+        "title": "Preservation holds",
+        "sql": "select name,reason,imposed_by,released_at,release_evidence from holds where record_id=$1 order by created_at"
+      },
+      {
+        "title": "Change history",
+        "sql": "select action,actor,detail,created_at from events where record_id=$1 order by created_at,id"
+      }
+    ]
+  },
+  {
+    "name": "retention-review",
+    "title": "Retention review: no destruction authorised",
+    "for_each": "select id,name from records order by name",
+    "file": "name",
+    "sections": [
+      {
+        "title": "Current decision",
+        "sql": "select name,owner,retention_end,active_holds,decision from retention_queue where id=$1",
+        "note": "The owner must confirm legal obligations, holds and every copy before deciding what to retain."
+      },
+      {
+        "title": "Review evidence",
+        "sql": "select revision,version,outcome,actor,evidence,next_review,created_at from reviews where record_id=$1 order by created_at,id"
+      },
+      {
+        "title": "Follow-up work",
+        "sql": "select name,owner,due,completed_at,evidence from tasks where record_id=$1 order by due"
+      }
     ]
   }
 ]

@@ -1,0 +1,24 @@
+{
+  "captured": "2026-10-19",
+  "fictional": true,
+  "screens": [
+    {
+      "title": "Originals and reviews",
+      "ask": "Which documents need a review?",
+      "command": "node scripts/records.mjs review-queue",
+      "output": "  name                          cabinet     owner       current version  reason                     \n  ----------------------------  ----------  ----------  ---------------  ---------------------------\n  Delivery docket archive       Operations  Unassigned  0                Original not attached      \n  Former supplier contact list  Operations  Aroha       1                Current record not reviewed\n  Supplier invoice March        Finance     Mere        1                Current record not reviewed\n  Supplier invoice disputed     Finance     Mere        1                Current record not reviewed\n  Supplier service agreement    Operations  Aroha       1                Current record not reviewed"
+    },
+    {
+      "title": "Retention decisions",
+      "ask": "Which records need a retention decision, and which must stay?",
+      "command": "node scripts/records.mjs retention-due",
+      "output": "  name                          owner       retention end  active holds  decision                               \n  ----------------------------  ----------  -------------  ------------  ---------------------------------------\n  Delivery docket archive       Unassigned  null           0             Retention date missing                 \n  Former supplier contact list  Aroha       2026-08-20     0             Eligible for human review, not deletion\n  Supplier invoice disputed     Mere        2025-12-23     1             Held: do not dispose"
+    },
+    {
+      "title": "The weekly work queue",
+      "ask": "What records work needs attention this week?",
+      "command": "node scripts/records.mjs attention",
+      "output": "  name                             owner       kind      reason                     \n  -------------------------------  ----------  --------  ---------------------------\n  Delivery docket archive          Unassigned  document  Original not attached      \n  Former supplier contact list     Aroha       document  Current record not reviewed\n  Supplier invoice March           Mere        document  Current record not reviewed\n  Supplier invoice disputed        Mere        document  Current record not reviewed\n  Supplier service agreement       Aroha       document  Current record not reviewed\n  Obtain original delivery docket  Tane        task      Overdue follow-up"
+    }
+  ]
+}

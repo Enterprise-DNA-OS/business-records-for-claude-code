@@ -1,13 +1,45 @@
 [
   {
     "name": "week",
-    "title": "This week",
-    "subtitle": "Business Records for Claude Code: what needs attention, rendered by npm run view",
+    "title": "Records desk: this week",
+    "subtitle": "Internal review. Fictional when using demo data.",
     "sections": [
       {
         "title": "Needs attention",
-        "note": "TODO(author): point this at the industry's attention view (overdue, stuck, quiet).",
-        "sql": "select 'replace me' as item, 'TODO(author)' as why"
+        "sql": "select name,owner,kind,reason from attention_queue order by kind,name"
+      },
+      {
+        "title": "Retention decisions",
+        "sql": "select name,owner,retention_end,active_holds,decision from retention_queue order by name",
+        "note": "Eligibility is for human review. No destruction is authorised."
+      }
+    ]
+  },
+  {
+    "name": "custody",
+    "title": "Originals and custody",
+    "sections": [
+      {
+        "title": "Original coverage",
+        "sql": "select name,cabinet,owner,current_version,bytes,active_holds from record_register order by cabinet,name"
+      },
+      {
+        "title": "Identical originals",
+        "sql": "select sha256,count(distinct record_id) as records from versions group by sha256 having count(distinct record_id)>1"
+      }
+    ]
+  },
+  {
+    "name": "reviews",
+    "title": "Reviews and evidence",
+    "sections": [
+      {
+        "title": "Current reviews",
+        "sql": "select name,record_class,review_current,last_outcome,last_review,next_review from record_register order by name"
+      },
+      {
+        "title": "Recorded controls",
+        "sql": "select name,actor,evidence,next_review from controls order by created_at desc"
       }
     ]
   }

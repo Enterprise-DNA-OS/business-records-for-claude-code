@@ -6,11 +6,14 @@
   "license": "MIT",
   "author": "Enterprise DNA (https://www.enterprisedna.co)",
   "repository": "github:Enterprise-DNA-OS/business-records-for-claude-code",
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "migrate": "node scripts/migrate.mjs",
     "seed": "node scripts/seed.mjs",
-    "demo": "node scripts/migrate.mjs && node scripts/seed.mjs",
+    "records": "node scripts/records.mjs",
+    "demo": "node scripts/demo.mjs",
     "view": "node scripts/view.mjs",
     "docs": "node scripts/docs.mjs",
     "test": "node scripts/smoke.mjs"

@@ -1,0 +1,20 @@
+[
+  {
+    "label": "Typical Cloud range lower reference",
+    "amount": 30,
+    "currency": "USD",
+    "per": "user/month, indicative range; final configuration quoted",
+    "source": "https://start.docuware.com/faq/docuware-pricing",
+    "checked": "2026-10-19",
+    "quote": "between $30 and $125+ per user per month"
+  },
+  {
+    "label": "Typical Cloud range upper reference, plus",
+    "amount": 125,
+    "currency": "USD",
+    "per": "user/month and above, indicative range; not a fixed plan",
+    "source": "https://start.docuware.com/faq/docuware-pricing",
+    "checked": "2026-10-19",
+    "quote": "between $30 and $125+ per user per month"
+  }
+]
